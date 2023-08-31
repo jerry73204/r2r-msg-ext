@@ -1,32 +1,19 @@
-use anyhow::anyhow;
-use anyhow::bail;
-use anyhow::ensure;
-use anyhow::Result;
-use arrow::array::Array;
-use arrow::array::ArrayData;
-use arrow::array::ArrayRef;
-use arrow::array::AsArray;
-use arrow::array::FixedSizeListArray;
-use arrow::array::Float32Array;
-use arrow::array::Float64Array;
-use arrow::array::Int16Array;
-use arrow::array::Int32Array;
-use arrow::array::Int8Array;
-use arrow::array::StructArray;
-use arrow::array::UInt16Array;
-use arrow::array::UInt32Array;
-use arrow::array::UInt8Array;
-use arrow::buffer::Buffer;
-use arrow::datatypes::DataType;
-use arrow::datatypes::Field;
-use itertools::izip;
-use itertools::Itertools;
+use anyhow::{anyhow, bail, ensure, Result};
+use arrow::{
+    array::{
+        Array, ArrayData, ArrayRef, AsArray, FixedSizeListArray, Float32Array, Float64Array,
+        Int16Array, Int32Array, Int8Array, StructArray, UInt16Array, UInt32Array, UInt8Array,
+    },
+    buffer::Buffer,
+    datatypes::{DataType, Field},
+};
+use itertools::{izip, Itertools};
 use num_derive::FromPrimitive;
-use num_traits::FromPrimitive;
-use num_traits::ToBytes;
-use r2r::sensor_msgs::msg::PointCloud2;
-use r2r::sensor_msgs::msg::PointField;
-use r2r::std_msgs::msg::Header;
+use num_traits::{FromPrimitive, ToBytes};
+use r2r::{
+    sensor_msgs::msg::{PointCloud2, PointField},
+    std_msgs::msg::Header,
+};
 use std::sync::Arc;
 
 macro_rules! make_array {

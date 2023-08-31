@@ -1,8 +1,6 @@
-use anyhow::bail;
-use anyhow::Result;
+use anyhow::{bail, Result};
 use nalgebra as na;
-use r2r::sensor_msgs::msg::PointCloud2;
-use r2r::sensor_msgs::msg::PointField;
+use r2r::sensor_msgs::msg::{PointCloud2, PointField};
 
 pub trait PointCloud2NalgebraExt {
     fn na_point_iter(&self)

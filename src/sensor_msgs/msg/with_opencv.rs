@@ -1,10 +1,8 @@
-use anyhow::ensure;
-use anyhow::{bail, Result};
-use opencv::core::Scalar;
-use opencv::core::Vec3b;
-use opencv::core::VecN;
-use opencv::core::CV_8UC3;
-use opencv::prelude::*;
+use anyhow::{bail, ensure, Result};
+use opencv::{
+    core::{Scalar, Vec3b, VecN, CV_8UC3},
+    prelude::*,
+};
 use r2r::sensor_msgs::msg::Image;
 
 pub trait ImageOpenCvExt {
