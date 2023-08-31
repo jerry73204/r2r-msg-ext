@@ -4,7 +4,7 @@ use nalgebra as na;
 use r2r::sensor_msgs::msg::PointCloud2;
 use r2r::sensor_msgs::msg::PointField;
 
-pub trait PointCloud2Ext {
+pub trait PointCloud2NalgebraExt {
     fn na_point_iter(&self)
         -> Result<Box<dyn Iterator<Item = na::Point3<f32>> + Sync + Send + '_>>;
 
@@ -13,7 +13,7 @@ pub trait PointCloud2Ext {
     }
 }
 
-impl PointCloud2Ext for PointCloud2 {
+impl PointCloud2NalgebraExt for PointCloud2 {
     fn na_point_iter(
         &self,
     ) -> Result<Box<dyn Iterator<Item = na::Point3<f32>> + Sync + Send + '_>> {
