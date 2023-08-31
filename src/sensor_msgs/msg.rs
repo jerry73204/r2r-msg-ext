@@ -7,3 +7,8 @@ mod with_opencv;
 pub use with_nalgebra::*;
 #[cfg(feature = "with-nalgebra")]
 mod with_nalgebra;
+
+#[cfg(feature = "with-arrow")]
+pub use with_arrow::*;
+#[cfg(feature = "with-arrow")]
+mod with_arrow;

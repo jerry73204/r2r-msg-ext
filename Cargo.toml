@@ -11,9 +11,14 @@ r2r = "0.7.5"
 nalgebra = { version = "0.30.1", optional = true }
 opencv = { version = "0.84.5", optional = true, features = ["clang-runtime"] }
 fast-yuv442-to-rgb24 = { git = "https://github.com/jerry73204/fast-yuv442-to-rgb24.git", rev = "00b3c6da303aca4822d0234e3fe114874dcc24bf", optional = true }
+arrow = { version = "46.0.0", optional = true }
+num-traits = { version = "0.2.16", optional = true }
+num-derive = { version = "0.4.0", optional = true }
+itertools = { version = "0.11.0", optional = true }
 
 [features]
-full = ["with-nalgebra", "with-opencv"]
+full = ["with-nalgebra", "with-opencv", "with-arrow"]
+nightly = ["fast-yuv442-to-rgb24"]
 with-opencv = ["opencv"]
 with-nalgebra = ["nalgebra"]
-nightly = ["fast-yuv442-to-rgb24"]
+with-arrow = ["arrow", "itertools", "num-traits", "num-derive"]
