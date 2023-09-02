@@ -12,3 +12,6 @@ mod with_nalgebra;
 pub use with_arrow::*;
 #[cfg(feature = "with-arrow")]
 mod with_arrow;
+
+pub use with_std::*;
+mod with_std;
