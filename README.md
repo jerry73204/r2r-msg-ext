@@ -22,6 +22,18 @@ rev = "0.1.0"
 features = ["with-opencv"]
 ```
 
+With this crate imported, you can get a new extended method
+`Image::to_mat()` in your code for example.
+
+
+```rust
+use opencv::prelude::*;
+use r2r::sensor_msgs::msg::Image;
+use r2r_msg_ext::prelude::*;
+
+let image: Image = get_image_from_subscriber();
+let mat: Mat = image.to_mat()?;
+```
 
 ## License
 
